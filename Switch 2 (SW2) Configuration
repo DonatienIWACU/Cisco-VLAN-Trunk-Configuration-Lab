@@ -1,0 +1,38 @@
+🖥️ Switch 2 (SW2) Configuration
+
+hostname SW2
+
+! Create VLANs
+vlan 10
+ name VLAN10
+vlan 20
+ name VLAN20
+vlan 30
+ name VLAN30
+
+! Assign access ports
+interface fa0/1
+ switchport mode access
+ switchport access vlan 10
+ no shutdown
+
+interface fa0/2
+ switchport mode access
+ switchport access vlan 20
+ no shutdown
+
+interface fa0/3
+ switchport mode access
+ switchport access vlan 30
+ no shutdown
+
+! Configure trunk link to SW1
+interface fa0/4
+ description Link_to_SW1
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30
+ no shutdown
+
+! Save configuration
+end
+write memory
