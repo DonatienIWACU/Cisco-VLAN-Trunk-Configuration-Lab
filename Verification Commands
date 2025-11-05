@@ -1,0 +1,18 @@
+🔍 Verification Commands
+show vlan brief
+show interfaces trunk
+show interfaces status
+
+Connectivity test
+
+PCs within the same VLAN (e.g., VLAN10 on SW1 and VLAN10 on SW2) should ping each other successfully.
+
+PCs in different VLANs cannot communicate without a router (Inter-VLAN routing).
+
+🧾 Results Summary
+Test	Expected Result	Status
+VLANs created successfully	VLANs 10, 20, 30 active on both switches	
+Access ports assigned correctly	Fa0/1–Fa0/3 in VLANs 10, 20, 30	
+Trunk link between switches	Fa0/4 trunking with VLANs 10,20,30	
+Same VLAN communication	PCs in same VLAN ping successfully	
+Inter-VLAN isolation	PCs in different VLANs cannot ping	
